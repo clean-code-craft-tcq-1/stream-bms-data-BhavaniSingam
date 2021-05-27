@@ -17,8 +17,8 @@ def generateBatteryParameters():
 
 def stream_readings(max_count):
     bms_records_count = 0
-    while(count < max_count):
+    while(bms_records_count < max_count):
         print(format_battery_parameter())
         bms_records_count += 1
         time.sleep(1)
-        count += 1
+        
