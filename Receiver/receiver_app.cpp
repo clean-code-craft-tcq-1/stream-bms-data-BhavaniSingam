@@ -13,7 +13,6 @@ int main()
 	BOOL firstdata = true;
 	std::stringstream InputData;
 	bms_process_receiver recvObj;
-	float MinSOC = 0, MaxSOC = 0, MinTemp = 0, MaxTemp = 0;
 	long avgCalcCount = 0;
 	double SOC_avg = 0,temp_avg = 0;
 	int position = 0;
