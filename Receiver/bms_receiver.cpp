@@ -1,7 +1,18 @@
+#include "stdafx.h"
 #include<iostream>
 #include <stdlib.h>
 #include <sstream>
 #include "bms_receiver.h"
+#define SOC_STRING "soc"
+#define TEMP_STRING "temperature"
+
+char validate_data(std::string sample)
+{
+	if ((sample.find(SOC_STRING) == std::string::npos) || (sample.find(TEMP_STRING) == std::string::npos))
+		return false;
+	else
+		return true;
+}
 
 void bms_process_receiver::init_minmax(BMS_DATA *sampleData)
 {
@@ -33,9 +44,7 @@ BMS_DATA* bms_process_receiver::extractData(std::stringstream& IPData)
 	
 	std::string subString[5];
 	std::string sample = IPData.str();
-	std::string SOCString = "soc";
-	std::string tempString = "temperature";
-	if ((sample.find(SOCString) == std::string::npos) || (sample.find(SOCString) == std::string::npos))
+	if (validate_data(sample))
 		return NULL;
 
 	for (int iter = 0; iter < 5; iter++)
