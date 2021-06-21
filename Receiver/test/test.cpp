@@ -14,7 +14,7 @@ TEST_CASE("data reception test") {
   REQUIRE(validate_data(teststring));
   IPDATA <<  teststring;
   sampleData = testObj.extractData(IPData);
-  REQUIRE( sampleData.SOC == 59 );
-  REQUIRE( sampleData.temperature == 15 );
+  REQUIRE( sampleDat->.SOC == 59 );
+  REQUIRE( sampleData->temperature == 15 );
   
 }
