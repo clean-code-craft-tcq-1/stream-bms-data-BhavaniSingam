@@ -11,6 +11,8 @@ typedef struct {
 	float SOC;
 }BMS_DATA;
 
+char validate_data(std::string sample);
+
 class bms_process_receiver {
 public:
 	float SOCArray[MOVING_LENGTH] = { 0 };
