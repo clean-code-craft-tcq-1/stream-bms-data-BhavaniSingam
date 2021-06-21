@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <sstream>
 #include "bms_receiver.h"
+using namespace std;
 bms_process_receiver recvObj;
 char firstdata = true;
 
