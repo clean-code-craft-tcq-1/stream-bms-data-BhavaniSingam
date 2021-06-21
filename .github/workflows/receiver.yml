@@ -14,7 +14,7 @@ jobs:
       run: sudo apt-get install -y gcovr
 
     - name: build
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o receiverexecutable ./receiver/*.c*
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o receiverexecutable ./Receiver/*.c*
 
     - name: collect coverage
       run: gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html
