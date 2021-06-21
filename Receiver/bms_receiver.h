@@ -1,5 +1,5 @@
 #pragma once
-
+#include <sstream>
 #include <stdlib.h>
 #define MOVING_LENGTH 5
 #define TEMP_JSON_INDEX 1
