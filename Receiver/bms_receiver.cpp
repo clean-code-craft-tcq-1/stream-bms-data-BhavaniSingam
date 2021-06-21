@@ -11,17 +11,22 @@ void bms_process_receiver::init_minmax(BMS_DATA *sampleData)
 	MaxTemp = sampleData->temperature;
 }
 
-void bms_process_receiver::compute_minmax(BMS_DATA *sampleData)
+void bms_process_receiver::compute_minmaxSOC(BMS_DATA *sampleData)
 {
 	if (MinSOC > sampleData->SOC)
 		MinSOC = sampleData->SOC;
 	if (MaxSOC < sampleData->SOC)
 		MaxSOC = sampleData->SOC;
+}
+
+void bms_process_receiver::compute_minmaxTemp(BMS_DATA *sampleData)
+{
 	if (MinTemp > sampleData->temperature)
 		MinTemp = sampleData->temperature;
 	if (MaxTemp < sampleData->temperature)
 		MaxTemp = sampleData->temperature;
 }
+
 
 BMS_DATA bms_process_receiver::extractData(std::stringstream& IPData)
 {
