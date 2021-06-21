@@ -30,13 +30,11 @@ void assignLength(int* movingLength)
 
 int main()
 {
-	BMS_DATA sampleData, prev_sample_data = {0,0};
+	BMS_DATA sampleData = {0,0};
 	std::stringstream InputData;
-	float MinSOC = 0, MaxSOC = 0, MinTemp = 0, MaxTemp = 0;
 	long avgCalcCount = 0;
 	double SOC_avg = 0,temp_avg = 0;
 	int position = 0, movingLength = 0;
-	int newAvg = 0;
 
 	while (1)
 	{
