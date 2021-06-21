@@ -55,7 +55,7 @@ int main()
 		temp_avg = recvObj.movingAvg(recvObj.tempArray, &recvObj.temp_sum, position, movingLength, sampleData->temperature);
 
 		position++;
-		position = (position >= MOVING_LENGTH) ? position : 0;
+		position = (position >= MOVING_LENGTH) ? 0 : position;
 
 		printf("MinSOC = %02.2f, MaxSOC = %02.2f, MinTemperature = %02.2f, Maxtemperature = %02.2f, AvgSOC = %02.2f, Avgtemp = %02.2f \n", \
 			recvObj.MinSOC, recvObj.MaxSOC, recvObj.MinTemp, recvObj.MaxTemp, SOC_avg, temp_avg);
