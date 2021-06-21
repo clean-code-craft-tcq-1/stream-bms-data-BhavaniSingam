@@ -16,7 +16,6 @@ int main()
 	long avgCalcCount = 0;
 	double SOC_avg = 0,temp_avg = 0;
 	int position = 0;
-	int newAvg = 0;
 
 	while (1)
 	{
