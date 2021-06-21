@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-	BMS_DATA sampleData, prev_sample_data = {0,0};
+	BMS_DATA sampleData = {0,0};
 	BOOL firstdata = true;
 	std::stringstream InputData;
 	bms_process_receiver recvObj;
