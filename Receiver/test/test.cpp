@@ -2,9 +2,19 @@
 #include<iostream>
 #include <stdlib.h>
 #include <sstream>
-#include "bms_receiver.h"
+#include "../bms_receiver.h"
 #include "catch.hpp"
 
 TEST_CASE("data reception test") {
-
+  
+  bms_process_receiver testObj;
+  BMS_DATA* sampleData;
+  std::stringstream IPData;
+  std::string teststring = "{'temperature': 15, 'soc': 59}";
+  REQUIRE(validate_data(teststring));
+  IPDATA <<  teststring;
+  sampleData = testObj.extractData(IPData);
+  REQUIRE( sampleData.SOC == 59 );
+  REQUIRE( sampleData.temperature == 15 );
+  
 }
