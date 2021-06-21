@@ -1,4 +1,5 @@
-#include "stdafx.h"
+// bms_receiver.cpp : Defines the implementation for receiver.
+//
 #include<iostream>
 #include <stdlib.h>
 #include <sstream>
