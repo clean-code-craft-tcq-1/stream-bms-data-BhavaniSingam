@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <sstream>
 #include "bms_receiver.h"
-using namespace std;
 bms_process_receiver recvObj;
 char firstdata = true;
 
@@ -30,7 +29,7 @@ void assignLength(int* movingLength)
 
 int main()
 {
-	BMS_DATA sampleData = {0,0};
+	BMS_DATA* sampleData;
 	std::stringstream InputData;
 	long avgCalcCount = 0;
 	double SOC_avg = 0,temp_avg = 0;
@@ -46,11 +45,13 @@ int main()
 		//Sleep(500);
 		InputData << input;
 		sampleData = recvObj.extractData(InputData);
-		update_minmax(&sampleData);
+		if (sampleData == NULL)
+			continue;
+		update_minmax(sampleData);
 		assignLength(&movingLength);
 
-		SOC_avg = recvObj.movingAvg(recvObj.SOCArray, &recvObj.SOC_sum, position, movingLength, sampleData.SOC);
-		temp_avg = recvObj.movingAvg(recvObj.tempArray, &recvObj.temp_sum, position, movingLength, sampleData.temperature);
+		SOC_avg = recvObj.movingAvg(recvObj.SOCArray, &recvObj.SOC_sum, position, movingLength, sampleData->SOC);
+		temp_avg = recvObj.movingAvg(recvObj.tempArray, &recvObj.temp_sum, position, movingLength, sampleData->temperature);
 
 		position++;
 		position = (position >= MOVING_LENGTH) ? position : 0;
