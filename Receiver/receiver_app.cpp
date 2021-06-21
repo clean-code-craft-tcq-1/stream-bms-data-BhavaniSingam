@@ -7,7 +7,6 @@
 #include "bms_receiver.h"
 using namespace std;
 
-#ifdef recv_1
 int main()
 {
 	BMS_DATA sampleData, prev_sample_data = {0,0};
@@ -53,4 +52,3 @@ int main()
 	}
 	return 0;
 }
-#endif
