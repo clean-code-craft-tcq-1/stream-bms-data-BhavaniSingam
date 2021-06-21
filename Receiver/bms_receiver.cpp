@@ -28,17 +28,23 @@ void bms_process_receiver::compute_minmaxTemp(BMS_DATA *sampleData)
 }
 
 
-BMS_DATA bms_process_receiver::extractData(std::stringstream& IPData)
+BMS_DATA* bms_process_receiver::extractData(std::stringstream& IPData)
 {
-	BMS_DATA bms_params;
+	
 	std::string subString[5];
+	std::string sample = IPData.str();
+	std::string SOCString = "soc";
+	std::string tempString = "temperature";
+	if ((sample.find(SOCString) == std::string::npos) || (sample.find(SOCString) == std::string::npos))
+		return NULL;
+
 	for (int iter = 0; iter < 5; iter++)
 	{
 		IPData >> subString[iter];
 	}
 	bms_params.temperature = std::stof(subString[TEMP_JSON_INDEX]);
 	bms_params.SOC = std::stof(subString[SOC_JSON_INDEX]);
-	return bms_params;
+	return &bms_params;
 }
 
 double bms_process_receiver::movingAvg(float *ptrArrNumbers, double *ptrSum, int pos, int len, float nextNum)
