@@ -12,9 +12,9 @@ TEST_CASE("data reception test") {
   std::stringstream IPData;
   std::string teststring = "{'temperature': 15, 'soc': 59}";
   REQUIRE(validate_data(teststring));
-  IPDATA <<  teststring;
+  IPDATA << "{'temperature': 15, 'soc': 59}";
   sampleData = testObj.extractData(IPData);
-  REQUIRE( sampleDat->SOC == 59 );
+  REQUIRE( sampleData->SOC == 59 );
   REQUIRE( sampleData->temperature == 15 );
   
 }
