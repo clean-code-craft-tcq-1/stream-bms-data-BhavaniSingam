@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
 	BMS_DATA sampleData = {0,0};
-	BOOL firstdata = true;
+	char firstdata = true;
 	std::stringstream InputData;
 	bms_process_receiver recvObj;
 	long avgCalcCount = 0;
