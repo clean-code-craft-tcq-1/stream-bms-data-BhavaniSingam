@@ -20,6 +20,7 @@ public:
 	double SOC_sum = 0, temp_sum = 0;
 	BMS_DATA extractData(std::stringstream& IPData);
 	void init_minmax(BMS_DATA *sampleData);
-	void compute_minmax(BMS_DATA *sampleData);
+	void compute_minmaxSOC(BMS_DATA *sampleData);
+	void compute_minmaxTemp(BMS_DATA *sampleData);
 	double movingAvg(float *ptrArrNumbers, double *ptrSum, int pos, int len, float nextNum);
 };
