@@ -36,7 +36,7 @@ int main()
 	double SOC_avg = 0,temp_avg = 0;
 	int position = 0, movingLength = 0;
 
-	while (1)
+	while (avgCalcCount<6)
 	{
 		avgCalcCount++;
 		movingLength = avgCalcCount;
