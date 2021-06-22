@@ -35,9 +35,9 @@ int main()
 	long avgCalcCount = 0;
 	double SOC_avg = 0,temp_avg = 0;
 	int position = 0, movingLength = 0;
-/* due to continous running of the application which causes issue in the YML execution so restricted to 30*/
+/* due to continous running of the application which causes issue in the YML execution so restricted to 50*/
 	//while(1) is replaced by finite iterations.
-	while (avgCalcCount<30)
+	while (avgCalcCount<50)
 	{
 		avgCalcCount++;
 		movingLength = avgCalcCount;
